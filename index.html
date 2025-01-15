@@ -4,52 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown to Jan 31, 2025</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
-            color: #fff;
-            text-align: center;
-			background-image:url("background.jpg");
-			background-repeat:no-repeat;
-			background-size:cover;
-        }
-
-        .countdown-container {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-			height: 150px;
-			margin-top: 100px;
-			margin-left: 100px;
-        }
-
-        .countdown {
-            display: flex;
-            gap: 20px;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        .countdown div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .label {
-            font-size: 1rem;
-            font-weight: normal;
-            margin-top: 5px;
-        }
-    </style>
+	<link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" async="" src="script.js"></script>
 </head>
 <body>
     <div class="countdown-container">
+		<div id="fireworks-container"></div>
         <h1>Countdown to Lunar New Year</h1>
         <div class="countdown">
             <div>
@@ -72,28 +32,7 @@
     </div>
 
     <script>
-        function updateCountdown() {
-            const targetDate = new Date('2025-01-29T00:00:00');
-            const now = new Date();
-            const timeDiff = targetDate - now;
 
-            if (timeDiff > 0) {
-                const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
-                document.getElementById('days').textContent = days;
-                document.getElementById('hours').textContent = hours;
-                document.getElementById('minutes').textContent = minutes;
-                document.getElementById('seconds').textContent = seconds;
-            } else {
-                document.querySelector('.countdown-container').innerHTML = '<h1>The date has arrived!</h1>';
-            }
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
     </script>
 </body>
 </html>
